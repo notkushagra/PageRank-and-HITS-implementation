@@ -269,11 +269,13 @@ nx.hits(sub_graph)
 
 
 X = A@A.T
-h=eig(X)[1][:,0]
+W,VL= eig(X)
+h=eig(X)[1][:,np.argmax(W)]
 h = h/sum(h)
 #w,v=eig(a)
 #print(v[:,1]
 hubs=h.T
+# print(hubs)
 
 
 
@@ -281,11 +283,17 @@ hubs=h.T
 
 
 Y =A.T@A
-a=eig(Y)[1][:,0]
+w, vl= eig(Y)
+a=eig(Y)[1][:,np.argmax(w)]
 a= a/sum(a)
 #w,v=eig(a)
 #print(v[:,1]
 authorities=a.T
+# print(authorities)
+
+
+baseset=list(set(baseset))
+rootset=list(set(rootset))
 
 print()
 print("The rootset for the input query is :")
