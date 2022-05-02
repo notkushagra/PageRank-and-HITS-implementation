@@ -3,7 +3,10 @@
 
 ## Libraries Imported
 
-**numpy, networkx**
+`numpy`
+`networkx`
+
+<h2> Process </h2>
 
 ## STEP 1
 Size of matrix is inputted from the user and then the **Adjacency matrix** **G** is constructed by inputting **1 or 0** denoting whether there is an edge between 2 nodes or not respectively.
@@ -29,4 +32,10 @@ The **function power_itr_inf(xp,P)** is called where xp is the product of matric
 This function keeps on multiplying matrix P with matrix xp till the resultant matrix attains a constant value. 
 This constant value matrix is the desired page rank vector.
 
+<h3>To Run </h3>
+Make sure the folder structure is the same as follows and the gpickle file is in the same location. If you want to you may include your own gpickle in the file.
+Run the python file in the command line using the following commnad.
 
+```
+python PageRank.py
+```
