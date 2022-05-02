@@ -220,16 +220,20 @@ for i in range(len(rootset)):
     len_in_edges=len(in_edges)
     len_out_edges=len(out_edges)
     for j in range(len_in_edges):
-        baseset.append(in_edges[j][0])
+        temp=in_edges[j][0]
+        if temp not in baseset: 
+            baseset.append(temp)
     for j in range(len_out_edges):
-        baseset.append(out_edges[j][1])
+        temp=out_edges[j][1]
+        if temp not in baseset: 
+            baseset.append(temp)
 
 
 # In[13]:
 
 
-baseset=np.array(baseset)
-baseset=np.unique(baseset)
+# baseset=np.array(baseset)
+# baseset=np.unique(baseset)
 
 
 # In[14]:

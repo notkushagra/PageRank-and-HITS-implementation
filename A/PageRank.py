@@ -62,6 +62,7 @@ def generate_tp_matrix(alpha,G):
 #                 [0,0,0,0,0,0,1],
 #                 [0,0,0,0,0,1,1],
 #                 [0,0,0,1,1,0,1]], dtype=float)
+# 0 0 1 0 0 0 0 0 1 1 0 0 0 0 1 0 1 1 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 1 0 0 0 1 1 0 1
 
 # P=generate_tp_matrix(0.14,test)
 
@@ -116,14 +117,16 @@ def input_adj_as_matrix():
     This function takes input for adjacency matrix. The user enters the values in a linear fashion.
    
     """
-    R = int(input("Enter the number of rows:"))
+    R = int(input("Enter the number of nodes: "))
+    edges = int(input("Enter the number of edges: "))
     C = R
-       
-    print("Enter the entries in a single line (separated by space): ")
+    matrix = np.zeros((R, C))   
+    
+    for k in range(edges):
+        i=int(input())
+        j=int(input())
+        matrix[i-1][j-1]=1
 
-    entries = list(map(int, input().split()))
-      
-    matrix = np.array(entries).reshape(R, C)
     return matrix
 
 # Taking input of damping factor(alpha).
@@ -144,4 +147,4 @@ print("\nThe PageRank vector of the input Graph is as follows: ")
 
 # Printing the final page rank vector.
 print(PageRank_vector)
-
+print()
