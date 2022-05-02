@@ -1,21 +1,14 @@
 import numpy as np
-import scipy as sc
-import scipy.linalg
 import networkx as nx
-import matplotlib.pyplot as plt
-
 
 # make a matrix
 # transform it to tp matrix
 # apply power iteration
 
-def generate_matrix(n) :
-    c = np.full([n,n], np.arange(n))
-    c = (abs(np.random.standard_cauchy([n,n])/2) > (np.abs(c - c.T) + 1)) + 0
-    c = (c+1e-10) / np.sum((c+1e-10), axis=0)
-    return c
-
 def print_matrix(mat):
+    """
+    This function prints the matrix
+    """
     rows=len(mat)
     columns=len(mat[0])
     for i in range(rows):
@@ -23,7 +16,12 @@ def print_matrix(mat):
             print(mat[i][j],end=' ')
         print()
 
+        
+
 def generate_tp_matrix(alpha,G):
+    """
+    This function generates the total probability matrix.
+    """
     rows=len(G)
     N=rows
     columns=len(G[0])
@@ -70,6 +68,9 @@ def generate_tp_matrix(alpha,G):
 # print(P)
 
 def power_itr100(xp,P):
+    """
+    This function multiplies matrix P with matrix xp 100 times.
+    """
     count=100
     prev=np.zeros(columns)
 
@@ -80,6 +81,9 @@ def power_itr100(xp,P):
     print(xp)
 
 def power_itr_inf(xp,P):
+    """
+    This function keeps on multiplying matrix P with matrix xp till the resultant matrix attains a constant value.
+    """
     count=0
     prev=np.zeros(columns)
 
@@ -93,6 +97,12 @@ def power_itr_inf(xp,P):
     return xp
 
 def input_adj():
+    """
+    This function takes input for adjacency matrix.
+    For some matrix M and particular i,j values, M[i][j]=1 or(M[i][j]>1) denotes the presence of an edge between node i and node j.
+    M[i][j]=0 denotes that there is no edge between node i and node j.
+   
+    """
     irows=int(input("Enter number of points: "))
     icolumns=irows
     mat=np.zeros((irows,icolumns))
@@ -102,6 +112,10 @@ def input_adj():
     return mat
 
 def input_adj_as_matrix():
+    """
+    This function takes input for adjacency matrix. The user enters the values in a linear fashion.
+   
+    """
     R = int(input("Enter the number of rows:"))
     C = R
        
@@ -112,6 +126,8 @@ def input_adj_as_matrix():
     matrix = np.array(entries).reshape(R, C)
     return matrix
 
+# Taking input of damping factor(alpha).
+
 alpha=float(input("\nEnter the value of alpha: "))
 G=input_adj_as_matrix()
 
@@ -121,8 +137,11 @@ columns=len(G[0])
 x=np.zeros(columns)
 x[0]=1
 xp=np.dot(x,P)
+
 print()
 PageRank_vector=power_itr_inf(xp,P)
 print("\nThe PageRank vector of the input Graph is as follows: ")
+
+# Printing the final page rank vector.
 print(PageRank_vector)
 

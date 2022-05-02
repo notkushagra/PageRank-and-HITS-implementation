@@ -1,0 +1,525 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>HITS API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>HITS</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">#!/usr/bin/env python
+# coding: utf-8
+
+# In[1]:
+
+import numpy as np 
+import matplotlib as plt
+import collections
+
+import networkx as nx #pip install networkx
+from numpy.linalg import eig
+
+import nltk
+from nltk.tokenize import sent_tokenize , word_tokenize
+
+from nltk.corpus import stopwords
+from nltk.stem import PorterStemmer
+
+import glob
+import re
+import os
+import sys
+
+from collections import defaultdict
+from collections import deque
+
+stwords = set(stopwords.words(&#39;english&#39;))
+
+web_graph = nx.read_gpickle(&#34;web_graph.gpickle&#34;)
+G=web_graph
+
+
+# In[2]:
+
+
+def editDist(word1, word2):
+    &#39;&#39;&#39;
+    Finds the distance between two similar words.
+    &#39;&#39;&#39;
+    m=len(word1)
+    n=len(word2)
+    
+    dp = [[0 for x in range(n + 1)] for x in range(m + 1)]
+ 
+    for i in range(m + 1):
+        for j in range(n + 1):
+            if i == 0:
+                dp[i][j] = j    # Minimum possible operations for this case = j
+
+            elif j == 0:
+                dp[i][j] = i    # Minimum possible operations for this case = i
+ 
+            elif word1[i-1] == word2[j-1]:
+                dp[i][j] = dp[i-1][j-1]
+ 
+            else:
+                dp[i][j] = 1 + min(dp[i][j-1],        # Count Insert
+                                   dp[i-1][j],        # Count Remove
+                                   dp[i-1][j-1])      # Count Replace and find minimum
+ 
+    return dp[m][n]
+
+
+# In[3]:
+
+
+def getClosest(word):
+    &#39;&#39;&#39;
+    Function returns the closest word in the dictionary.
+    &#39;&#39;&#39;
+    dictionary = {}
+    for w in ii.keys():
+        dist=editDist(word,w)
+        dictionary[w]=dist
+        if dist == 1:
+            return w
+    v=(sorted(dictionary.items(), key=lambda item: item[1]))
+    return v[0][0] 
+
+
+# In[4]:
+
+
+def inverted_index_creation():
+    &#39;&#39;&#39;
+    This function creates an inverted index list for all the data present in the dataset.
+    Here the data set is being accessed by accessing the different pagecontent of the nodes in the web graph
+    &#39;&#39;&#39;
+
+    inverted_index = defaultdict(set)
+
+    #importing stopwords from nltk and making it into a set
+    stwords = set(stopwords.words(&#39;english&#39;))
+
+    #importing the porterStemmer
+    ps = PorterStemmer()
+
+    def remove_special_characters(text):
+        import re
+        regex = re.compile(&#39;[^a-zA-Z0-9\s]&#39;)
+        text_returned = re.sub(regex,&#39;&#39;,text)
+        return text_returned
+
+    web_graph = nx.read_gpickle(&#34;web_graph.gpickle&#34;)
+    G=web_graph
+
+    for docId in range(len(G)):
+        text=G.nodes[docId][&#39;page_content&#39;]
+        text=remove_special_characters(text)
+
+        for sent in sent_tokenize(text):
+            for word in word_tokenize(sent):
+                word_lower = word.lower()
+                if word_lower not in stwords:
+                    #stemms the words
+                    word_stem = ps.stem(word_lower)
+                    inverted_index[word_stem].add(docId)
+    return inverted_index
+
+
+# In[5]:
+
+
+def print_hubs():
+    &#39;&#39;&#39;
+    This function prints the hubs vector in a dictionary fashion.
+    It prints the hub score of a particular node w.r.t. the query
+    &#39;&#39;&#39;
+    print(&#34;Nodes(DocId)    Hub Score&#34;)
+    for i in range(len(baseset)):
+        print(str(baseset[i])+&#34;            :&#34;+str(hubs[0,i]))
+
+
+# In[6]:
+
+
+def print_authorities():
+    &#39;&#39;&#39;
+    This function prints the authorities vector in a dictionary fashion.
+    It prints the authority score of a particular node w.r.t. the query
+    &#39;&#39;&#39;
+    print(&#34;Nodes(DocId)    Authority Score&#34;)
+    for i in range(len(baseset)):
+        print(str(baseset[i])+&#34;            :&#34;+str(authorities[0,i]))
+
+
+# In[7]:
+
+
+node_index= 0
+G.nodes[node_index][&#39;page_content&#39;]
+
+
+# In[8]:
+
+
+pos={i:web_graph.nodes[i][&#39;pos&#39;] for i in range(len(web_graph.nodes))}
+
+nx.draw(web_graph,pos)
+
+
+# In[9]:
+
+
+ii=inverted_index_creation()
+
+
+# In[10]:
+
+
+rootset=[]
+baseset=[]
+
+query = input(&#39;Enter your query:&#39;)
+    
+query = query.lower()
+query_tokens=query.split()
+query_words=[]
+
+q = deque()
+
+ps=PorterStemmer()
+
+for word in query_tokens:
+    word=word.lower()
+    if word not in stwords:
+        word=ps.stem(word)
+        query_words.append(word)
+
+for word in query_words:
+    if word in ii.keys():
+        set_a=ii[word]
+        set_contains=(set(set_a)) #typecasting to set
+        q.append(set_contains)
+
+    else:
+        cword=getClosest(word)
+        set_a=ii[cword]
+        set_contains=(set(set_a))
+        q.append(set_contains)
+        continue
+
+n=len(query_words)
+
+for i in range(n-1):
+    set_a = q.pop()
+    set_b = q.pop()
+    unioned=set(set_a).union(set(set_b))
+    q.appendleft(unioned)
+
+rootset=list(collections.deque(q[0]))
+
+
+# In[11]:
+
+
+baseset=rootset.copy()
+
+
+# In[12]:
+
+
+for i in range(len(rootset)):
+    ind=rootset[i]
+    in_edges=list(G.in_edges(ind))
+    out_edges=list(G.out_edges(ind))
+    len_in_edges=len(in_edges)
+    len_out_edges=len(out_edges)
+    for j in range(len_in_edges):
+        baseset.append(in_edges[j][0])
+    for j in range(len_out_edges):
+        baseset.append(out_edges[j][1])
+
+
+# In[13]:
+
+
+baseset=np.array(baseset)
+baseset=np.unique(baseset)
+
+
+# In[14]:
+
+
+sub_graph=web_graph.subgraph(baseset)
+
+
+# In[15]:
+
+
+n=len(sub_graph.nodes)
+A=nx.adjacency_matrix(sub_graph).todense()
+#print(A.todense())
+AT=A.transpose()
+#print(AT.todense())
+# a=np.ones(n)
+# h=np.ones(n)
+# x=np.zeros((n,n))
+# print(A)
+# print()
+# print(AT)
+# print()
+
+
+# In[16]:
+
+
+nx.hits(sub_graph)
+
+
+# In[17]:
+
+
+X = A@A.T
+h=eig(X)[1][:,0]
+h = h/sum(h)
+#w,v=eig(a)
+#print(v[:,1]
+hubs=h.T
+
+
+
+# In[18]:
+
+
+Y =A.T@A
+a=eig(Y)[1][:,0]
+a= a/sum(a)
+#w,v=eig(a)
+#print(v[:,1]
+authorities=a.T
+
+print()
+print(&#34;The rootset for the input query is :&#34;)
+print(rootset)
+print()
+
+print(&#34;The baseset for the input query is :&#34;)
+print(baseset)
+print()
+
+print(&#34;The hubs vector for the subgraph is :&#34;)
+print(hubs)
+print()
+
+print(&#34;The authorities vector for the subgraph is :&#34;)
+print(authorities)
+print()
+
+print_hubs()
+print()
+print_authorities()
+print()</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="HITS.editDist"><code class="name flex">
+<span>def <span class="ident">editDist</span></span>(<span>word1, word2)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Finds the distance between two similar words.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def editDist(word1, word2):
+    &#39;&#39;&#39;
+    Finds the distance between two similar words.
+    &#39;&#39;&#39;
+    m=len(word1)
+    n=len(word2)
+    
+    dp = [[0 for x in range(n + 1)] for x in range(m + 1)]
+ 
+    for i in range(m + 1):
+        for j in range(n + 1):
+            if i == 0:
+                dp[i][j] = j    # Minimum possible operations for this case = j
+
+            elif j == 0:
+                dp[i][j] = i    # Minimum possible operations for this case = i
+ 
+            elif word1[i-1] == word2[j-1]:
+                dp[i][j] = dp[i-1][j-1]
+ 
+            else:
+                dp[i][j] = 1 + min(dp[i][j-1],        # Count Insert
+                                   dp[i-1][j],        # Count Remove
+                                   dp[i-1][j-1])      # Count Replace and find minimum
+ 
+    return dp[m][n]</code></pre>
+</details>
+</dd>
+<dt id="HITS.getClosest"><code class="name flex">
+<span>def <span class="ident">getClosest</span></span>(<span>word)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Function returns the closest word in the dictionary.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def getClosest(word):
+    &#39;&#39;&#39;
+    Function returns the closest word in the dictionary.
+    &#39;&#39;&#39;
+    dictionary = {}
+    for w in ii.keys():
+        dist=editDist(word,w)
+        dictionary[w]=dist
+        if dist == 1:
+            return w
+    v=(sorted(dictionary.items(), key=lambda item: item[1]))
+    return v[0][0] </code></pre>
+</details>
+</dd>
+<dt id="HITS.inverted_index_creation"><code class="name flex">
+<span>def <span class="ident">inverted_index_creation</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>This function creates an inverted index list for all the data present in the dataset.
+Here the data set is being accessed by accessing the different pagecontent of the nodes in the web graph</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def inverted_index_creation():
+    &#39;&#39;&#39;
+    This function creates an inverted index list for all the data present in the dataset.
+    Here the data set is being accessed by accessing the different pagecontent of the nodes in the web graph
+    &#39;&#39;&#39;
+
+    inverted_index = defaultdict(set)
+
+    #importing stopwords from nltk and making it into a set
+    stwords = set(stopwords.words(&#39;english&#39;))
+
+    #importing the porterStemmer
+    ps = PorterStemmer()
+
+    def remove_special_characters(text):
+        import re
+        regex = re.compile(&#39;[^a-zA-Z0-9\s]&#39;)
+        text_returned = re.sub(regex,&#39;&#39;,text)
+        return text_returned
+
+    web_graph = nx.read_gpickle(&#34;web_graph.gpickle&#34;)
+    G=web_graph
+
+    for docId in range(len(G)):
+        text=G.nodes[docId][&#39;page_content&#39;]
+        text=remove_special_characters(text)
+
+        for sent in sent_tokenize(text):
+            for word in word_tokenize(sent):
+                word_lower = word.lower()
+                if word_lower not in stwords:
+                    #stemms the words
+                    word_stem = ps.stem(word_lower)
+                    inverted_index[word_stem].add(docId)
+    return inverted_index</code></pre>
+</details>
+</dd>
+<dt id="HITS.print_authorities"><code class="name flex">
+<span>def <span class="ident">print_authorities</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>This function prints the authorities vector in a dictionary fashion.
+It prints the authority score of a particular node w.r.t. the query</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def print_authorities():
+    &#39;&#39;&#39;
+    This function prints the authorities vector in a dictionary fashion.
+    It prints the authority score of a particular node w.r.t. the query
+    &#39;&#39;&#39;
+    print(&#34;Nodes(DocId)    Authority Score&#34;)
+    for i in range(len(baseset)):
+        print(str(baseset[i])+&#34;            :&#34;+str(authorities[0,i]))</code></pre>
+</details>
+</dd>
+<dt id="HITS.print_hubs"><code class="name flex">
+<span>def <span class="ident">print_hubs</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>This function prints the hubs vector in a dictionary fashion.
+It prints the hub score of a particular node w.r.t. the query</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def print_hubs():
+    &#39;&#39;&#39;
+    This function prints the hubs vector in a dictionary fashion.
+    It prints the hub score of a particular node w.r.t. the query
+    &#39;&#39;&#39;
+    print(&#34;Nodes(DocId)    Hub Score&#34;)
+    for i in range(len(baseset)):
+        print(str(baseset[i])+&#34;            :&#34;+str(hubs[0,i]))</code></pre>
+</details>
+</dd>
+</dl>
+</section>
+<section>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="">
+<li><code><a title="HITS.editDist" href="#HITS.editDist">editDist</a></code></li>
+<li><code><a title="HITS.getClosest" href="#HITS.getClosest">getClosest</a></code></li>
+<li><code><a title="HITS.inverted_index_creation" href="#HITS.inverted_index_creation">inverted_index_creation</a></code></li>
+<li><code><a title="HITS.print_authorities" href="#HITS.print_authorities">print_authorities</a></code></li>
+<li><code><a title="HITS.print_hubs" href="#HITS.print_hubs">print_hubs</a></code></li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>

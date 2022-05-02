@@ -1,0 +1,385 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>PageRank API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>PageRank</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">import numpy as np
+import scipy as sc
+import scipy.linalg
+import networkx as nx
+import matplotlib.pyplot as plt
+
+
+# make a matrix
+# transform it to tp matrix
+# apply power iteration
+
+def print_matrix(mat):
+    &#34;&#34;&#34;
+    This function prints the matrix
+    &#34;&#34;&#34;
+    rows=len(mat)
+    columns=len(mat[0])
+    for i in range(rows):
+        for j in range(columns):
+            print(mat[i][j],end=&#39; &#39;)
+        print()
+
+        
+
+def generate_tp_matrix(alpha,G):
+    &#34;&#34;&#34;
+    This function generates the total probability matrix.
+    &#34;&#34;&#34;
+    rows=len(G)
+    N=rows
+    columns=len(G[0])
+    P = np.zeros((rows,columns))
+    sum_of_1s=[]
+    
+    #sum_of_1s[rows]
+    for i in range(rows):
+        rowsum=0;
+        for j in range(columns):
+            if(G[i][j]==1): rowsum+=1
+        sum_of_1s.append(rowsum)
+        #print(sum_of_1s[i])
+        
+    #dividing by row sum
+    for i in range(rows):
+        for j in range(columns):
+            if(G[i][j]==1): 
+                temp=G[i][j]/sum_of_1s[i]
+                #print(temp)
+                P[i][j]=temp
+    
+    #multiply by 1-alpha
+    for i in range(rows):
+        for j in range(columns):
+            P[i][j]*=(1-alpha)
+            
+    #adding alpha by n to P
+    for i in range(rows):
+        for j in range(columns):
+            P[i][j]+=(alpha/N)
+    return P
+
+# test= np.array([[0,0,1,0,0,0,0],
+#                 [0,1,1,0,0,0,0],
+#                 [1,0,1,1,0,0,0],
+#                 [0,0,0,1,1,0,0],
+#                 [0,0,0,0,0,0,1],
+#                 [0,0,0,0,0,1,1],
+#                 [0,0,0,1,1,0,1]], dtype=float)
+
+# P=generate_tp_matrix(0.14,test)
+
+# print(P)
+
+def power_itr100(xp,P):
+    &#34;&#34;&#34;
+    This function multiplies matrix P with matrix xp 100 times.
+    &#34;&#34;&#34;
+    count=100
+    prev=np.zeros(columns)
+
+    while(count):
+        prev=xp
+        xp=np.dot(xp,P)
+        count-=1
+    print(xp)
+
+def power_itr_inf(xp,P):
+    &#34;&#34;&#34;
+    This function keeps on multiplying matrix P with matrix xp till the resultant matrix attains a constant value.
+    &#34;&#34;&#34;
+    count=0
+    prev=np.zeros(columns)
+
+    while(True):
+        if np.array_equal(prev,xp):
+            break;
+        prev=xp
+        xp=np.dot(xp,P)
+        count+=1
+    print(&#34;The value of xP and the next iteration becomes same after &#34;+ str(count)+&#34; iterations&#34;)
+    return xp
+
+def input_adj():
+    &#34;&#34;&#34;
+    This function takes input for adjacency matrix.
+    For some matrix M and particular i,j values, M[i][j]=1 or(M[i][j]&gt;1) denotes the presence of an edge between node i and node j.
+    M[i][j]=0 denotes that there is no edge between node i and node j.
+   
+    &#34;&#34;&#34;
+    irows=int(input(&#34;Enter number of points: &#34;))
+    icolumns=irows
+    mat=np.zeros((irows,icolumns))
+    for i in range(irows):
+        for j in range(icolumns):
+            mat[i][j]=int(input(&#34;Is &#34;+&#39;A&#39;-str(i)+&#34; and &#34;+str(j)+&#34; connected?\nPress 1 for yes and 0 for NO :&#34;))
+    return mat
+
+def input_adj_as_matrix():
+    &#34;&#34;&#34;
+    This function takes input for adjacency matrix. The user enters the values in a linear fashion.
+   
+    &#34;&#34;&#34;
+    R = int(input(&#34;Enter the number of rows:&#34;))
+    C = R
+       
+    print(&#34;Enter the entries in a single line (separated by space): &#34;)
+
+    entries = list(map(int, input().split()))
+      
+    matrix = np.array(entries).reshape(R, C)
+    return matrix
+
+# Taking input of damping factor(alpha).
+
+alpha=float(input(&#34;\nEnter the value of alpha: &#34;))
+G=input_adj_as_matrix()
+
+P=generate_tp_matrix(alpha,G)
+
+columns=len(G[0])
+x=np.zeros(columns)
+x[0]=1
+xp=np.dot(x,P)
+
+print()
+PageRank_vector=power_itr_inf(xp,P)
+print(&#34;\nThe PageRank vector of the input Graph is as follows: &#34;)
+
+# Printing the final page rank vector.
+print(PageRank_vector)</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="PageRank.generate_tp_matrix"><code class="name flex">
+<span>def <span class="ident">generate_tp_matrix</span></span>(<span>alpha, G)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>This function generates the total probability matrix.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def generate_tp_matrix(alpha,G):
+    &#34;&#34;&#34;
+    This function generates the total probability matrix.
+    &#34;&#34;&#34;
+    rows=len(G)
+    N=rows
+    columns=len(G[0])
+    P = np.zeros((rows,columns))
+    sum_of_1s=[]
+    
+    #sum_of_1s[rows]
+    for i in range(rows):
+        rowsum=0;
+        for j in range(columns):
+            if(G[i][j]==1): rowsum+=1
+        sum_of_1s.append(rowsum)
+        #print(sum_of_1s[i])
+        
+    #dividing by row sum
+    for i in range(rows):
+        for j in range(columns):
+            if(G[i][j]==1): 
+                temp=G[i][j]/sum_of_1s[i]
+                #print(temp)
+                P[i][j]=temp
+    
+    #multiply by 1-alpha
+    for i in range(rows):
+        for j in range(columns):
+            P[i][j]*=(1-alpha)
+            
+    #adding alpha by n to P
+    for i in range(rows):
+        for j in range(columns):
+            P[i][j]+=(alpha/N)
+    return P</code></pre>
+</details>
+</dd>
+<dt id="PageRank.input_adj"><code class="name flex">
+<span>def <span class="ident">input_adj</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>This function takes input for adjacency matrix.
+For some matrix M and particular i,j values, M[i][j]=1 or(M[i][j]&gt;1) denotes the presence of an edge between node i and node j.
+M[i][j]=0 denotes that there is no edge between node i and node j.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def input_adj():
+    &#34;&#34;&#34;
+    This function takes input for adjacency matrix.
+    For some matrix M and particular i,j values, M[i][j]=1 or(M[i][j]&gt;1) denotes the presence of an edge between node i and node j.
+    M[i][j]=0 denotes that there is no edge between node i and node j.
+   
+    &#34;&#34;&#34;
+    irows=int(input(&#34;Enter number of points: &#34;))
+    icolumns=irows
+    mat=np.zeros((irows,icolumns))
+    for i in range(irows):
+        for j in range(icolumns):
+            mat[i][j]=int(input(&#34;Is &#34;+&#39;A&#39;-str(i)+&#34; and &#34;+str(j)+&#34; connected?\nPress 1 for yes and 0 for NO :&#34;))
+    return mat</code></pre>
+</details>
+</dd>
+<dt id="PageRank.input_adj_as_matrix"><code class="name flex">
+<span>def <span class="ident">input_adj_as_matrix</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>This function takes input for adjacency matrix. The user enters the values in a linear fashion.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def input_adj_as_matrix():
+    &#34;&#34;&#34;
+    This function takes input for adjacency matrix. The user enters the values in a linear fashion.
+   
+    &#34;&#34;&#34;
+    R = int(input(&#34;Enter the number of rows:&#34;))
+    C = R
+       
+    print(&#34;Enter the entries in a single line (separated by space): &#34;)
+
+    entries = list(map(int, input().split()))
+      
+    matrix = np.array(entries).reshape(R, C)
+    return matrix</code></pre>
+</details>
+</dd>
+<dt id="PageRank.power_itr100"><code class="name flex">
+<span>def <span class="ident">power_itr100</span></span>(<span>xp, P)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>This function multiplies matrix P with matrix xp 100 times.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def power_itr100(xp,P):
+    &#34;&#34;&#34;
+    This function multiplies matrix P with matrix xp 100 times.
+    &#34;&#34;&#34;
+    count=100
+    prev=np.zeros(columns)
+
+    while(count):
+        prev=xp
+        xp=np.dot(xp,P)
+        count-=1
+    print(xp)</code></pre>
+</details>
+</dd>
+<dt id="PageRank.power_itr_inf"><code class="name flex">
+<span>def <span class="ident">power_itr_inf</span></span>(<span>xp, P)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>This function keeps on multiplying matrix P with matrix xp till the resultant matrix attains a constant value.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def power_itr_inf(xp,P):
+    &#34;&#34;&#34;
+    This function keeps on multiplying matrix P with matrix xp till the resultant matrix attains a constant value.
+    &#34;&#34;&#34;
+    count=0
+    prev=np.zeros(columns)
+
+    while(True):
+        if np.array_equal(prev,xp):
+            break;
+        prev=xp
+        xp=np.dot(xp,P)
+        count+=1
+    print(&#34;The value of xP and the next iteration becomes same after &#34;+ str(count)+&#34; iterations&#34;)
+    return xp</code></pre>
+</details>
+</dd>
+<dt id="PageRank.print_matrix"><code class="name flex">
+<span>def <span class="ident">print_matrix</span></span>(<span>mat)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>This function prints the matrix</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def print_matrix(mat):
+    &#34;&#34;&#34;
+    This function prints the matrix
+    &#34;&#34;&#34;
+    rows=len(mat)
+    columns=len(mat[0])
+    for i in range(rows):
+        for j in range(columns):
+            print(mat[i][j],end=&#39; &#39;)
+        print()</code></pre>
+</details>
+</dd>
+</dl>
+</section>
+<section>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="two-column">
+<li><code><a title="PageRank.generate_tp_matrix" href="#PageRank.generate_tp_matrix">generate_tp_matrix</a></code></li>
+<li><code><a title="PageRank.input_adj" href="#PageRank.input_adj">input_adj</a></code></li>
+<li><code><a title="PageRank.input_adj_as_matrix" href="#PageRank.input_adj_as_matrix">input_adj_as_matrix</a></code></li>
+<li><code><a title="PageRank.power_itr100" href="#PageRank.power_itr100">power_itr100</a></code></li>
+<li><code><a title="PageRank.power_itr_inf" href="#PageRank.power_itr_inf">power_itr_inf</a></code></li>
+<li><code><a title="PageRank.print_matrix" href="#PageRank.print_matrix">print_matrix</a></code></li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>
