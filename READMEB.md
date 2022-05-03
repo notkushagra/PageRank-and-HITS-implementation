@@ -1,4 +1,4 @@
-<h1> HITS HUBS and AUTHORITY </h1>
+<h1> HITS Hyperlink Induced Topic Search </h1>
 
 ## Libraries imported:
 `numpy`
